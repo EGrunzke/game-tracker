@@ -1,0 +1,15 @@
+- import com.grunzke.gametracker.Player
+- import sorm.Persisted
+-@ val ps: Stream[Player with Persisted]
+
+h1 Players
+table
+  tr
+    th id
+    th name
+    th email
+  - for (p <- ps)
+    tr
+      td= p.id
+      td= p.name
+      td= p.email
