@@ -15,12 +15,6 @@ class TrackerServlet extends GameTrackerStack {
     </html>
   }
 
-  get("/init") {
-    Db.save(Player("Eric Grunzke", "eric@grunzke.com"))
-    Db.save(Player("David Moffett", "david.moffett1@gmail.com"))
-    "Made two peeps"
-  }
-
   get("/player/list") {
     contentType="text/html"
     val ps = Db.query[Player].fetch()
