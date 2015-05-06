@@ -1,30 +1,9 @@
-## generic files to ignore
-*~
-*.lock
-*.DS_Store
-*.swp
-*.out
-
-# rails specific
-*.sqlite3
-config/database.yml
-log/*
-tmp/*
+.history
+.cache
+.lib
 
 # java specific
 *.class
-
-# python specific
-*.pyc
-
-# xcode/iphone specific
-build/*
-*.pbxuser
-*.mode2v3
-*.mode1v3
-*.perspective
-*.perspectivev3
-*~.nib
 
 # akka specific
 logs/*
@@ -53,18 +32,3 @@ jrebel.lic
 .settings
 .classpath
 .project
-
-.ensime*
-*.sublime-*
-.cache
-
-# intellij
-*.eml
-*.iml
-*.ipr
-*.iws
-.*.sw?
-.idea
-
-# paulp script
-/.lib/
