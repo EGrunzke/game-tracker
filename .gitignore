@@ -32,3 +32,4 @@ jrebel.lic
 .settings
 .classpath
 .project
+/bin/

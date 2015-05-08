@@ -30,10 +30,11 @@ object GameTrackerBuild extends Build {
         "org.eclipse.jetty"      %  "jetty-webapp"      % "9.1.5.v20140505" % "container",
         "org.eclipse.jetty"      %  "jetty-plus"        % "9.1.5.v20140505" % "container",
         "javax.servlet"          %  "javax.servlet-api" % "3.1.0",
-        "org.sorm-framework"     %  "sorm"              % "0.3.18" exclude("org.scala-lang","scala-compiler"),
+        "org.sorm-framework"     %  "sorm"              % "0.3.18",
         "com.h2database" 		 %  "h2"                % "1.4.187",
         "org.fusesource.scalamd" %  "scalamd_2.10"      % "1.6"
       ),
+	  dependencyOverrides += "org.scala-lang" % "scala-compiler" % ScalaVersion,
       scalateTemplateConfig in Compile <<= (sourceDirectory in Compile){ base =>
         Seq(
           TemplateConfig(

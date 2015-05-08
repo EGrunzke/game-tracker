@@ -7,12 +7,8 @@ import scalate.ScalateSupport
 class TrackerServlet extends GameTrackerStack {
 
   get("/") {
-    <html>
-      <body>
-        <h1>Hello, world! :-)</h1>
-        Say <a href="hello-scalate">hello to Scalate</a>.
-      </body>
-    </html>
+    contentType="text/html"
+    jade("index.jade")
   }
 
   get("/player/list") {
@@ -26,5 +22,18 @@ class TrackerServlet extends GameTrackerStack {
     val email = params("email")
     Db.save(Player(name, email))
     redirect("/player/list")
+  }
+
+  get("/gamedef/list") {
+    contentType="text/html"
+    val gameDefs = Db.query[GameDef].fetch()
+    jade("gamedef/list.jade", "gameDefs" -> gameDefs)
+  }
+
+  post("/gamedef/create") {
+    val name = params("name")
+    val bggurl = params("bggurl")
+    Db.save(GameDef(name, bggurl))
+    redirect("/gamedef/list")
   }
 }
